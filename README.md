@@ -7,6 +7,9 @@ A currency converter iOS app for ReactiveX (RxSwift) example
 ###Screen Shots
 ![screenshot]
 
+###API
+Used http://fixer.io/
+
 ###License
 RxCurrency is released under the MIT license. See LICENSE for details.
 
