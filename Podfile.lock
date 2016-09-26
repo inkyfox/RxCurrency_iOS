@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.0.0)
+  - RxAlamofire (3.0.0-beta.1):
+    - RxAlamofire/Core (= 3.0.0-beta.1)
+  - RxAlamofire/Core (3.0.0-beta.1):
+    - Alamofire (~> 4.0)
+    - RxCocoa (~> 3.0.0-beta.1)
+    - RxSwift (~> 3.0.0-beta.1)
+  - RxCocoa (3.0.0-beta.1):
+    - RxSwift (~> 3.0.0-beta.1)
+  - RxDataSources (1.0.0-beta.2):
+    - RxCocoa (~> 3.0.0-beta.1)
+    - RxSwift (~> 3.0.0-beta.1)
+  - RxSwift (3.0.0-beta.1)
+  - RxTests (3.0.0-beta.1):
+    - RxSwift (~> 3.0.0-beta.1)
+  - SwiftyJSON (3.0.0)
+
+DEPENDENCIES:
+  - RxAlamofire (~> 3.0.0-beta.1)
+  - RxCocoa (~> 3.0.0-beta.1)
+  - RxDataSources (~> 1.0.0-beta.2)
+  - RxSwift (~> 3.0.0-beta.1)
+  - RxTests (~> 3.0.0-beta.1)
+  - SwiftyJSON (~> 3.0)
+
+SPEC CHECKSUMS:
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  RxAlamofire: 3e62073fbe1c0269c942af44b073c10d9dda81ab
+  RxCocoa: 8cecf331302b8ae5381bbab1bccba4ede2eae6a8
+  RxDataSources: 1cd87dc97fd46be002942eb1dcb1b432535141dd
+  RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
+  RxTests: 819cbca750007349f03cfdb89bc07d412f67ab96
+  SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
+
+PODFILE CHECKSUM: f25c0d02b0fa2d5781723b066d6af270367318df
+
+COCOAPODS: 1.0.1

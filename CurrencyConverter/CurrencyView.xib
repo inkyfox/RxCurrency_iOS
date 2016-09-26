@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrencyView" customModule="CurrencyConverter" customModuleProvider="target">
+            <connections>
+                <outlet property="button0" destination="oFf-sw-PhE" id="4lc-BK-plJ"/>
+                <outlet property="button00" destination="Ouv-Ma-aCO" id="zsT-fH-vc4"/>
+                <outlet property="button000" destination="866-L6-JGR" id="0FB-j9-KPP"/>
+                <outlet property="button1" destination="TKK-50-3jx" id="bwg-nQ-nfF"/>
+                <outlet property="button2" destination="Ood-PU-5ZV" id="L44-my-Nac"/>
+                <outlet property="button3" destination="Kz6-t6-ASv" id="usf-RX-uMl"/>
+                <outlet property="button4" destination="qQS-9w-CtY" id="6kR-gj-RwW"/>
+                <outlet property="button5" destination="BDQ-ez-AmU" id="Nxq-e3-GDG"/>
+                <outlet property="button6" destination="Dsh-av-ViV" id="LAf-B2-24y"/>
+                <outlet property="button7" destination="Cpo-dg-0hg" id="dPx-SM-sFl"/>
+                <outlet property="button8" destination="joZ-sg-JG0" id="jJH-aQ-car"/>
+                <outlet property="button9" destination="ntx-gh-n4o" id="aHf-jX-qLD"/>
+                <outlet property="buttonDel" destination="N04-ru-EEl" id="ORz-bz-x7p"/>
+                <outlet property="buttonReset" destination="ucX-Vr-FnH" id="WPN-BR-ppr"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="hM6-eo-4N7"/>
+                <outlet property="currencyLabel" destination="whT-hv-Jaq" id="3kl-om-tTO"/>
+                <outlet property="currencyNameButton" destination="9IN-le-Jzk" id="5bU-au-RS5"/>
+                <outlet property="flagButton" destination="lOh-ug-YLE" id="QoQ-c6-GSY"/>
+                <outlet property="numberLabel" destination="b2S-pv-e03" id="oPd-Ji-ugH"/>
+                <outlet property="slideBar" destination="LyK-nP-J9m" id="DqD-eS-JWy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="380" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2S-pv-e03">
+                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whT-hv-Jaq">
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LyK-nP-J9m"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKK-50-3jx" userLabel="Key 1" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="1">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ood-PU-5ZV" userLabel="Key 2" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="2">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz6-t6-ASv" userLabel="Key 3" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="3">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQS-9w-CtY" userLabel="Key 4" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="4">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDQ-ez-AmU" userLabel="Key 5" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="5">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-av-ViV" userLabel="Key 6" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="6">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpo-dg-0hg" userLabel="Key 7" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Cpo-dg-0hg" secondAttribute="height" multiplier="5:3" id="odT-pT-4Np"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="7">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joZ-sg-JG0" userLabel="Key 8" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="8">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntx-gh-n4o" userLabel="Key 9" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="9">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFf-sw-PhE" userLabel="Key 0" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="0">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouv-Ma-aCO" userLabel="Key 00" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="00">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="866-L6-JGR" userLabel="Key 000" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="000">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N04-ru-EEl" userLabel="Key ." customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="Del">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucX-Vr-FnH" userLabel="Key AC" customClass="NumberButton" customModule="CurrencyConverter" customModuleProvider="target">
+                    <color key="backgroundColor" white="0.0" alpha="0.14999999999999999" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" title="AC">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOh-ug-YLE">
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="G8s-Ku-LSc"/>
+                        <constraint firstAttribute="height" constant="30" id="mNd-x4-uUV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <state key="normal" title="🇰🇷"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IN-le-Jzk">
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Korea">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qQS-9w-CtY" firstAttribute="height" secondItem="TKK-50-3jx" secondAttribute="height" id="0h3-N1-q0s"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="top" secondItem="Cpo-dg-0hg" secondAttribute="top" id="1Ii-0N-Dwa"/>
+                <constraint firstAttribute="trailing" secondItem="whT-hv-Jaq" secondAttribute="trailing" constant="16" id="1MC-7B-tlu"/>
+                <constraint firstItem="lOh-ug-YLE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1eF-PD-IxE"/>
+                <constraint firstItem="ucX-Vr-FnH" firstAttribute="height" secondItem="N04-ru-EEl" secondAttribute="height" id="28x-qY-JeJ"/>
+                <constraint firstItem="866-L6-JGR" firstAttribute="top" secondItem="TKK-50-3jx" secondAttribute="top" id="2HY-T3-QUk"/>
+                <constraint firstItem="N04-ru-EEl" firstAttribute="top" secondItem="TKK-50-3jx" secondAttribute="top" id="3Ib-JM-tQO"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="bottom" secondItem="Cpo-dg-0hg" secondAttribute="bottom" id="3ha-Fn-NXZ"/>
+                <constraint firstItem="qQS-9w-CtY" firstAttribute="top" secondItem="TKK-50-3jx" secondAttribute="bottom" constant="2" id="3qA-EW-DlV"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="top" secondItem="Cpo-dg-0hg" secondAttribute="top" id="5Rq-IR-e3t"/>
+                <constraint firstItem="ucX-Vr-FnH" firstAttribute="leading" secondItem="N04-ru-EEl" secondAttribute="leading" id="7ua-o0-bCq"/>
+                <constraint firstItem="ucX-Vr-FnH" firstAttribute="bottom" secondItem="Cpo-dg-0hg" secondAttribute="bottom" id="8Yi-mH-K5S"/>
+                <constraint firstItem="9IN-le-Jzk" firstAttribute="leading" secondItem="lOh-ug-YLE" secondAttribute="trailing" constant="8" id="8cb-ju-DGi"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="trailing" secondItem="BDQ-ez-AmU" secondAttribute="trailing" id="9Ek-bU-ILz"/>
+                <constraint firstItem="Kz6-t6-ASv" firstAttribute="top" secondItem="TKK-50-3jx" secondAttribute="top" id="AyK-Lm-YL2"/>
+                <constraint firstItem="Ouv-Ma-aCO" firstAttribute="trailing" secondItem="866-L6-JGR" secondAttribute="trailing" id="Bdf-UE-lJX"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="leading" secondItem="Dsh-av-ViV" secondAttribute="leading" id="C3d-q6-1y9"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="trailing" secondItem="Kz6-t6-ASv" secondAttribute="trailing" id="CVj-BD-t7G"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="leading" secondItem="joZ-sg-JG0" secondAttribute="trailing" constant="2" id="DKH-3x-IHQ"/>
+                <constraint firstItem="Cpo-dg-0hg" firstAttribute="trailing" secondItem="TKK-50-3jx" secondAttribute="trailing" id="DhF-bQ-61k"/>
+                <constraint firstItem="9IN-le-Jzk" firstAttribute="centerY" secondItem="lOh-ug-YLE" secondAttribute="centerY" id="GQb-TI-omH"/>
+                <constraint firstItem="Dsh-av-ViV" firstAttribute="top" secondItem="qQS-9w-CtY" secondAttribute="top" id="HCr-6k-ynB"/>
+                <constraint firstItem="BDQ-ez-AmU" firstAttribute="top" secondItem="qQS-9w-CtY" secondAttribute="top" id="HFj-Rf-MSv"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="trailing" secondItem="Dsh-av-ViV" secondAttribute="trailing" id="JsL-sS-ky1"/>
+                <constraint firstItem="BDQ-ez-AmU" firstAttribute="bottom" secondItem="qQS-9w-CtY" secondAttribute="bottom" id="LR2-vT-qXU"/>
+                <constraint firstItem="Kz6-t6-ASv" firstAttribute="bottom" secondItem="TKK-50-3jx" secondAttribute="bottom" id="LYX-GF-Wsq"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="trailing" secondItem="Ood-PU-5ZV" secondAttribute="trailing" id="Lv2-xb-Bge"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="leading" secondItem="Ood-PU-5ZV" secondAttribute="leading" id="Ml3-Db-7UB"/>
+                <constraint firstItem="866-L6-JGR" firstAttribute="bottom" secondItem="TKK-50-3jx" secondAttribute="bottom" id="OHj-Y7-uhj"/>
+                <constraint firstItem="Cpo-dg-0hg" firstAttribute="height" secondItem="TKK-50-3jx" secondAttribute="height" id="Ooy-3m-u4g"/>
+                <constraint firstAttribute="trailing" secondItem="LyK-nP-J9m" secondAttribute="trailing" constant="20" id="PJj-xw-7sz"/>
+                <constraint firstItem="ucX-Vr-FnH" firstAttribute="top" secondItem="N04-ru-EEl" secondAttribute="bottom" constant="4" id="Szc-ZO-OWY"/>
+                <constraint firstItem="oFf-sw-PhE" firstAttribute="width" secondItem="Cpo-dg-0hg" secondAttribute="width" id="Tg3-pO-gt9"/>
+                <constraint firstItem="Cpo-dg-0hg" firstAttribute="trailing" secondItem="qQS-9w-CtY" secondAttribute="trailing" id="UMY-kS-DjE"/>
+                <constraint firstItem="Ouv-Ma-aCO" firstAttribute="bottom" secondItem="qQS-9w-CtY" secondAttribute="bottom" id="Udd-q5-VX6"/>
+                <constraint firstAttribute="trailing" secondItem="ucX-Vr-FnH" secondAttribute="trailing" constant="8" id="V1h-9Y-VSF"/>
+                <constraint firstItem="LyK-nP-J9m" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VPj-us-XAa"/>
+                <constraint firstItem="LyK-nP-J9m" firstAttribute="top" secondItem="whT-hv-Jaq" secondAttribute="bottom" constant="16" id="XU8-bA-0Gy"/>
+                <constraint firstItem="Ood-PU-5ZV" firstAttribute="top" secondItem="TKK-50-3jx" secondAttribute="top" id="Xe8-ED-qjH"/>
+                <constraint firstItem="b2S-pv-e03" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Y11-4V-yf0"/>
+                <constraint firstItem="lOh-ug-YLE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="a4Y-Mo-iGj"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="width" secondItem="Cpo-dg-0hg" secondAttribute="width" id="af2-IT-BcU"/>
+                <constraint firstItem="whT-hv-Jaq" firstAttribute="baseline" secondItem="b2S-pv-e03" secondAttribute="baseline" id="c9x-09-Nnz"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="bottom" secondItem="Cpo-dg-0hg" secondAttribute="bottom" id="cV6-UJ-gdi"/>
+                <constraint firstItem="Cpo-dg-0hg" firstAttribute="top" secondItem="qQS-9w-CtY" secondAttribute="bottom" constant="2" id="cdT-3c-7rr"/>
+                <constraint firstItem="whT-hv-Jaq" firstAttribute="leading" secondItem="b2S-pv-e03" secondAttribute="trailing" constant="16" id="csG-Xu-CcJ"/>
+                <constraint firstItem="Dsh-av-ViV" firstAttribute="bottom" secondItem="qQS-9w-CtY" secondAttribute="bottom" id="dFF-Ck-qWy"/>
+                <constraint firstItem="Ouv-Ma-aCO" firstAttribute="top" secondItem="qQS-9w-CtY" secondAttribute="top" id="dau-l3-W7k"/>
+                <constraint firstItem="oFf-sw-PhE" firstAttribute="leading" secondItem="ntx-gh-n4o" secondAttribute="trailing" constant="8" id="dsl-u3-Xfn"/>
+                <constraint firstItem="oFf-sw-PhE" firstAttribute="top" secondItem="Cpo-dg-0hg" secondAttribute="top" id="fFw-xB-vL2"/>
+                <constraint firstItem="ucX-Vr-FnH" firstAttribute="leading" secondItem="oFf-sw-PhE" secondAttribute="trailing" constant="8" id="fuu-05-e82"/>
+                <constraint firstItem="ntx-gh-n4o" firstAttribute="leading" secondItem="Kz6-t6-ASv" secondAttribute="leading" id="gLO-qD-gzJ"/>
+                <constraint firstItem="Ouv-Ma-aCO" firstAttribute="leading" secondItem="866-L6-JGR" secondAttribute="leading" id="hDe-Mp-YUG"/>
+                <constraint firstItem="oFf-sw-PhE" firstAttribute="trailing" secondItem="866-L6-JGR" secondAttribute="trailing" id="hRA-I6-t10"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="leading" secondItem="BDQ-ez-AmU" secondAttribute="leading" id="j21-Qu-Lte"/>
+                <constraint firstItem="ucX-Vr-FnH" firstAttribute="trailing" secondItem="N04-ru-EEl" secondAttribute="trailing" id="jBa-sY-yrO"/>
+                <constraint firstItem="oFf-sw-PhE" firstAttribute="leading" secondItem="866-L6-JGR" secondAttribute="leading" id="kep-Lq-hRD"/>
+                <constraint firstAttribute="bottom" secondItem="Cpo-dg-0hg" secondAttribute="bottom" id="mMw-g7-mTu"/>
+                <constraint firstItem="oFf-sw-PhE" firstAttribute="bottom" secondItem="Cpo-dg-0hg" secondAttribute="bottom" id="mZB-k5-fJA"/>
+                <constraint firstItem="ucX-Vr-FnH" firstAttribute="width" secondItem="Cpo-dg-0hg" secondAttribute="width" id="pTX-Db-DFx"/>
+                <constraint firstItem="Cpo-dg-0hg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pu3-rM-h9c"/>
+                <constraint firstItem="866-L6-JGR" firstAttribute="top" secondItem="LyK-nP-J9m" secondAttribute="bottom" constant="16" id="rAK-VH-b3f"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="leading" secondItem="Cpo-dg-0hg" secondAttribute="trailing" constant="2" id="sdo-ER-0ot"/>
+                <constraint firstItem="Cpo-dg-0hg" firstAttribute="leading" secondItem="TKK-50-3jx" secondAttribute="leading" id="v84-T0-7BL"/>
+                <constraint firstItem="joZ-sg-JG0" firstAttribute="width" secondItem="Cpo-dg-0hg" secondAttribute="width" id="xAr-b5-P4G"/>
+                <constraint firstItem="Ood-PU-5ZV" firstAttribute="bottom" secondItem="TKK-50-3jx" secondAttribute="bottom" id="xqf-xv-NMz"/>
+                <constraint firstItem="Cpo-dg-0hg" firstAttribute="leading" secondItem="qQS-9w-CtY" secondAttribute="leading" id="yb7-U0-0KO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="100" y="-185"/>
+        </view>
+    </objects>
+</document>
