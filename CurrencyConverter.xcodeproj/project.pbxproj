@@ -28,6 +28,8 @@
 		A96B9CBB1D98CF0000FD5CCF /* CurrencyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B9CBA1D98CF0000FD5CCF /* CurrencyViewModelTests.swift */; };
 		A96BAEE51D93052C0008764D /* OnOffObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BAEE41D93052C0008764D /* OnOffObservable.swift */; };
 		A988B0731D961A5500D19A78 /* CurrencySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988B0721D961A5500D19A78 /* CurrencySelectorViewController.swift */; };
+		A9EFAD8A1D9AB7E50041BCA1 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFAD891D9AB7E50041BCA1 /* Analytics.swift */; };
+		A9EFAD8C1D9ABD2E0041BCA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9EFAD8B1D9ABD2E0041BCA1 /* GoogleService-Info.plist */; };
 		BE710E07F05B33F4EA51806A /* Pods_CurrencyConverterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42962186644C26F4548407 /* Pods_CurrencyConverterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		A96B9CBA1D98CF0000FD5CCF /* CurrencyViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTests.swift; sourceTree = "<group>"; };
 		A96BAEE41D93052C0008764D /* OnOffObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnOffObservable.swift; sourceTree = "<group>"; };
 		A988B0721D961A5500D19A78 /* CurrencySelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectorViewController.swift; sourceTree = "<group>"; };
+		A9EFAD891D9AB7E50041BCA1 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		A9EFAD8B1D9ABD2E0041BCA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C35969532F4389B0181B3726 /* Pods-CurrencyConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +135,7 @@
 				A928173E1D92102B005DC2AF /* AppDelegate.swift */,
 				A92817471D92102B005DC2AF /* LaunchScreen.storyboard */,
 				A92817421D92102B005DC2AF /* Main.storyboard */,
+				A9EFAD891D9AB7E50041BCA1 /* Analytics.swift */,
 				A92817401D92102B005DC2AF /* ViewController.swift */,
 				A988B0721D961A5500D19A78 /* CurrencySelectorViewController.swift */,
 				A96B5AA21D93BE9F004A5826 /* Currency.swift */,
@@ -146,6 +151,7 @@
 				A92817641D924C6F005DC2AF /* NumberButton.swift */,
 				A96BAEE41D93052C0008764D /* OnOffObservable.swift */,
 				A928174A1D92102B005DC2AF /* Info.plist */,
+				A9EFAD8B1D9ABD2E0041BCA1 /* GoogleService-Info.plist */,
 				A92817451D92102B005DC2AF /* Assets.xcassets */,
 			);
 			path = CurrencyConverter;
@@ -183,6 +189,7 @@
 				A92817391D92102B005DC2AF /* Resources */,
 				556402800A21A64ADD9F342D /* [CP] Embed Pods Frameworks */,
 				1F6E3C36FA4C11055243D873 /* [CP] Copy Pods Resources */,
+				A9EFAD8D1D9AC6770041BCA1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -263,6 +270,7 @@
 			files = (
 				A92817491D92102B005DC2AF /* LaunchScreen.storyboard in Resources */,
 				A92817461D92102B005DC2AF /* Assets.xcassets in Resources */,
+				A9EFAD8C1D9ABD2E0041BCA1 /* GoogleService-Info.plist in Resources */,
 				A92817441D92102B005DC2AF /* Main.storyboard in Resources */,
 				A928175F1D921650005DC2AF /* CurrencyView.xib in Resources */,
 			);
@@ -368,6 +376,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A9EFAD8D1D9AC6770041BCA1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Replace this path with the path to the key you just downloaded\nJSON_FILE=CurrencyConverter/RxCurrency-511bd25b61c0.json\n\n# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:15666377920:ios:50e2d63a5d5d8432\n\ndefaults write com.google.SymbolUpload version -integer 1   # creates file if it does not exist\nJSON=$(cat \"${JSON_FILE}\")\n/usr/bin/plutil -replace \"app_${GOOGLE_APP_ID//:/_}\" -json \"${JSON}\" \"$HOME/Library/Preferences/com.google.SymbolUpload.plist\"\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -383,6 +404,7 @@
 				A96B5AA11D93BD51004A5826 /* CurrencyViewModel.swift in Sources */,
 				A988B0731D961A5500D19A78 /* CurrencySelectorViewController.swift in Sources */,
 				A9005AFD1D943B0E0033A8CC /* CurrencyFactory.swift in Sources */,
+				A9EFAD8A1D9AB7E50041BCA1 /* Analytics.swift in Sources */,
 				A96B9CB61D98BD1100FD5CCF /* CurrencyRate.swift in Sources */,
 				A96B5AA31D93BE9F004A5826 /* Currency.swift in Sources */,
 				A96B9CB21D984FC600FD5CCF /* CurrencyNotification.swift in Sources */,
@@ -534,6 +556,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XH2F8QV9GT;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oo-v.CurrencyConverter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -549,6 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XH2F8QV9GT;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oo-v.CurrencyConverter";
 				PRODUCT_NAME = "$(TARGET_NAME)";

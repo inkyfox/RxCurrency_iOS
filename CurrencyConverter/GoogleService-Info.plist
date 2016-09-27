@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>15666377920-lf0l3aes2nvdbr52clmeuk9pc0l2vcf6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.15666377920-lf0l3aes2nvdbr52clmeuk9pc0l2vcf6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCxl2KR-Zr619KNCOKM7AWMi3h0abEc9Vk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>15666377920</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.oo-v.CurrencyConverter</string>
+	<key>PROJECT_ID</key>
+	<string>rxcurrency</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rxcurrency.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:15666377920:ios:50e2d63a5d5d8432</string>
+	<key>DATABASE_URL</key>
+	<string>https://rxcurrency.firebaseio.com</string>
+</dict>
+</plist>

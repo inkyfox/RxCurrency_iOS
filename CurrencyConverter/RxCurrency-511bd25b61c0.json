@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "rxcurrency",
+  "private_key_id": "511bd25b61c0813e340634c8191f78127c4fc2eb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDL2XrHnjCqM8oq\nbE375lvknZQ8XGIplfpTP/jjDHZ9kXKYshV29/MOFZxaM6uF9jjbZg+2htlGZbAl\nnNLR/INixiR3gRlrIVECV/4LPinATtOGjKv1SuN414hrvxAxqepPRKby18sPJLtJ\naBqgMwLZSz2w/LJqpFyoU6aflIagxzvzSPwx9LdEzJ25cgIozpgTM+uMRD+sonQt\nJoAJqKqWojX/jESbiyuniHuGG2NWMoOWLxJVlUO7fWpRXSyVZIZGfzIf1l8pmFay\nI54itV1xsJpITtA4nGMkxg17k3sYZs9pg+m7HdJuvbztnZQQTH07rdZRP/q/J2BE\nGY8eAc2FAgMBAAECggEAeOmZ2zeok/w+KSWuqAC+dv9FAvylORd9sM2cOkiVK+wO\n9iWDd9qgr7T/1b0aO06N8Q07ur+Htyrv7Y90uRs3b2oqDTxlMFdFrsc0p8SKjUf0\nTbW49bki7fWiNI7S8zJfCf+lqxt2lZfrAyKd0HIReYQYppds2LZ/Q1TC25sEs+4K\nTsnhWoq7l7IiGRkWxo1vjc8S15AO2o5/4K9PMgJDDpzsFeZRF/YqF7WCr0Y8KCXY\nnJXzliU5jmodBViXjYK/ly7TEvrzyOrUQISTAr8ofobQWneJ0693h/TF7PtfH5ru\nZ6OYDD04HAjMHKyFBjHcy8rcOnS/6Et/qfVLgXDMIQKBgQDlm/plvytdViwRJZ0J\nDWQni+GiKUlKQv0utGGKZE+96FmHP/dFXlL/iOkaobeBa2M7ZFs6SOiZQTN/p8qn\nVZpNlPqbdv06FxLwSeRQpqjOQ7s8c2V2F7xEVCPlc4v5c7HmM9PBFzIEwaihwwDy\nZrKKgwFAIh5Tb3ADqhZVo2EdzQKBgQDjR4vpT8Hm88WzFpY1AUhuXD9w7b0Lj/pN\nFVv66Yf29H/JLxX7SuVaJZe65fOTiJRjmCFazg9xzFp596xDmpApoEtCdvFZJtcN\nmUwuNtqFTaO2jpJvHyXrTn6RoCqsLEoiAZ2/ZCUYa59qMk5iTglh2tKPDMSpyYol\nR64rS6T2mQKBgFjokggOA1ur/3pQR0N3FP4fMyqYtBF2aRVJsa9l8l7F9szhXv1U\nbe0W9bRjRGxvycf4rz6ddrvJPIjEzzsGca5y7qt+YsW4o5O5+RelwR3Fql3ZDUOy\nIyuOLSwvFtdsDknmbauKMMsYthSVLuuuCpqJ6dUMoROLxiMVHHrivbtNAoGBAMIu\naapf22HwGpRFEvacbv7jT8yzQhYz3/2l5x08E096XAdOdHBr8AKSJc2oE/CT+3wQ\nCUdk0KtAlniolAR6dPsrmcFikBfEaG6U8BJ4CUFlMR+TNic8rJAbU2YmOu85M+lU\nCivwawUvRldcPb4dwERbyhQwK4KIz7/EO1mAWqPZAoGBAMYXQghF7MwONR/kicxm\ngW+rdBxfGR872vCaSKWTF/9JXwOVuvVPIc5IXQTguxcu338EKSqxJIS3FZMAgloH\nPZ+BFch9WANaky4RvZ86jxkoVXmIg0YtgQQvMwbecsNow7O1MNl/bY9QchkrgUaf\nhH/g25TwOj5/FaMtyOmJHzbD\n-----END PRIVATE KEY-----\n",
+  "client_email": "symbol-upload-service-account@rxcurrency.iam.gserviceaccount.com",
+  "client_id": "102074443345417594899",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/symbol-upload-service-account%40rxcurrency.iam.gserviceaccount.com"
+}

@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import GoogleMobileAds
 
 class ViewController: UIViewController {
 
@@ -17,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lowerCurrencyView: CurrencyView!
     @IBOutlet weak var swapHButton: UIButton!
     @IBOutlet weak var swapVButton: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var bannerPositionConstraint: NSLayoutConstraint!
     
     fileprivate let disposeBag = DisposeBag()
     fileprivate var numberUnlocked = true
@@ -25,7 +28,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        upperCurrencyView.logID = "upper"
+        lowerCurrencyView.logID = "lower"
+        
         setupSubscriptions()
+
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.delegate = self
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            let request = GADRequest()
+            request.testDevices = ["18f57722c93de6cc252c881e6bfc927e"]
+            self?.bannerView.load(request)
+        }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,12 +52,23 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController : GADBannerViewDelegate {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+        bannerPositionConstraint.constant = 0
+        UIView.animate(withDuration: 0.4) { [weak self] in self?.view.layoutIfNeeded() }
+    }
+}
+
 extension ViewController {
     func reload() {
+        Analytics.load.send()
+        
         let reloadDisposeBag = DisposeBag()
         
         reloadBag.value = reloadDisposeBag
 
+        let before = Date().timeIntervalSince1970
+        
         let reload = API.default.request(.latest)
             .observeOn(ConcurrentDispatchQueueScheduler(globalConcurrentQueueQOS: .background))
             .flatMap { CurrencyFactory.instance.rx.parse(json: $0) }
@@ -51,9 +78,11 @@ extension ViewController {
             .subscribe(
                 onError: { [weak self] error in
                     self?.reloadBag.value = nil
+                    Analytics.loadFailed(elapsed: Date().timeIntervalSince1970 - before).send()
                 },
                 onCompleted: { [weak self] error in
                     self?.reloadBag.value = nil
+                    Analytics.loadSuccess(elapsed: Date().timeIntervalSince1970 - before).send()
                 }
             )
             .addDisposableTo(reloadDisposeBag)
@@ -74,11 +103,17 @@ extension ViewController {
                     return Date().timeIntervalSince1970 - updated > API.default.updateInterval
                 }
                 .debounce(0.1, scheduler: MainScheduler.instance)
+                .do(onNext: {
+                    guard let updated = CurrencyFactory.instance.updatedTime else { return }
+                    Analytics.periodicReload(elapsed: Date().timeIntervalSince1970 - updated)
+                        .send()
+                })
                 .bindNext(reload)
                 .addDisposableTo(disposeBag)
             
             reloadButton.rx.tap
                 .debounce(0.3, scheduler: MainScheduler.instance)
+                .do(onNext: { Analytics.buttonReload.send() })
                 .bindNext(reload)
                 .addDisposableTo(disposeBag)
             
@@ -192,8 +227,9 @@ extension ViewController {
         
         // swap
         do {
-            Observable.from([swapHButton.rx.tap, swapVButton.rx.tap])
-                .merge().bindNext(swap).addDisposableTo(disposeBag)
+            Observable.from([swapHButton.rx.tap, swapVButton.rx.tap]).merge()
+                .do(onNext: { Analytics.buttonSwap.send() })
+                .bindNext(swap).addDisposableTo(disposeBag)
         }
         
         // status
@@ -254,3 +290,4 @@ extension Reactive where Base : ViewController {
     }
     
 }
+

@@ -14,6 +14,9 @@ end
 
 target 'CurrencyConverter' do
     pods
+    pod 'Firebase/Crash'
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
 end
 
 target 'CurrencyConverterTests' do

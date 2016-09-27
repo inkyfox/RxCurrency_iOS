@@ -21,20 +21,20 @@ struct SlideConverter {
 
     func number(fromSlide slide: Float) -> Double {
         let powValue = Float(pow(slide, 8.0))
-        let powNumber = powValue == 0 ? 0 : Int(powValue * maxNumber) + 1
+        let powNumber = powValue == 0 ? 0 : Int64(powValue * maxNumber) + 1
         let digits = countDigits(powNumber)
-        let divides = Int(pow(10.0, Double(max(0, digits - 3))))
+        let divides = Int64(pow(10.0, Double(max(0, digits - 3))))
         return Double((powNumber / divides) * divides)
     }
     
     func slide(fromNumber number: Double) -> Float {
-        let intNumber = Int(number)
+        let intNumber = Int64(number)
         return min(1, pow(Float(intNumber < 1 ? 0 : Float(intNumber - 1) / maxNumber), 1.0 / 8.0))
     }
 
-    private func countDigits(_ number: Int) -> Int {
+    private func countDigits(_ number: Int64) -> Int {
         var count = 1
-        var up = 10
+        var up: Int64 = 10
         while count < maxDigitCount {
             if number < up { return count }
             count += 1
@@ -111,9 +111,9 @@ class CurrencyViewModel {
         fileprivate func format(number: Double) -> Double {
             let around = number + 0.005
             if around < 1 {
-                return Double(Int(around * 100.0)) / 100.0
+                return Double(Int64(around * 100.0)) / 100.0
             } else {
-                return Double(Int(number + 0.5))
+                return Double(Int64(number + 0.5))
             }
         }
         
@@ -123,7 +123,7 @@ class CurrencyViewModel {
             if n < 1 {
                 newValue = str
             } else {
-                newValue = "\(String(Int(n)))\(str)"
+                newValue = "\(String(Int64(n)))\(str)"
             }
             number.value = newValue
         }
@@ -132,7 +132,7 @@ class CurrencyViewModel {
             let value = number.value
             if value == "" { return }
             let n = formattedNumber
-            number.value = n >= 10 ? String(Int(n / 10)) : ""
+            number.value = n >= 10 ? String(Int64(n / 10)) : ""
         }
         
         func setCurrencySymbol(symbol s: String) {
@@ -211,7 +211,7 @@ extension Reactive where Base: CurrencyViewModel.NumberModel {
     }
     
     var digitCount: Observable<Int> {
-        return base.formattedNumberObservable.map { Int($0 + 0.5) }.map { String($0) }.map { $0.characters.count }
+        return base.formattedNumberObservable.map { Int64($0 + 0.5) }.map { String($0) }.map { $0.characters.count }
     }
  
     var slideValue: Observable<Float> {

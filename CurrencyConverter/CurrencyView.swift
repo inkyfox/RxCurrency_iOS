@@ -34,6 +34,7 @@ import RxSwift
     @IBOutlet weak var buttonDel: NumberButton!
     @IBOutlet weak var buttonReset: NumberButton!
 
+    var logID: String = "notset"
     
     fileprivate let disposeBag = DisposeBag()
     
@@ -189,6 +190,28 @@ import RxSwift
             
             showCurrency.connect().addDisposableTo(disposeBag)
         }
+        
+        // log
+        do {
+            Observable.from(numberButtons.map { (button, str) in button.rx.tap.map { str } })
+                .merge()
+                .subscribe(onNext: { [weak self] value in
+                    guard let sself = self else { return }
+                    Analytics.buttonNumber(viewID: sself.logID,
+                                           value: sself.viewModel.number.doubleNumber,
+                                           currency: sself.viewModel.currency.currency).send()
+                    })
+                .addDisposableTo(disposeBag)
+            
+            slideBar.rx.value.debounce(1, scheduler: MainScheduler.instance)
+                .subscribe(onNext: { [weak self] value in
+                    guard let sself = self else { return }
+                    Analytics.slide(viewID: sself.logID,
+                                    value: sself.viewModel.number.doubleNumber,
+                                    currency: sself.viewModel.currency.currency).send()
+                    })
+                .addDisposableTo(disposeBag)
+        }
     }
     
 }
@@ -198,11 +221,16 @@ extension CurrencyView {
     func showCurrencySelector() {
         guard let vc = window?.rootViewController else { return }
         
-        let selected = CurrencySelectorViewController
-            .open(selectedCurrency: viewModel.currency.currency, from: vc)
-            .publish()
+        Analytics.currencySelector(viewID: logID).send()
+
+        let viewID = logID
+        let before = viewModel.currency.currency
         
-        selected.bindTo(viewModel.currency.asObserver()).addDisposableTo(disposeBag)
+        let selected = CurrencySelectorViewController.open(selectedCurrency: before, from: vc).publish()
+        
+        selected
+            .do(onNext: { Analytics.currencyChanged(viewID: viewID, from: before, to: $0).send() })
+            .bindTo(viewModel.currency.asObserver()).addDisposableTo(disposeBag)
         selected.subscribe(
             onCompleted: { [weak self] in
                 self?.flagButton.isEnabled = true

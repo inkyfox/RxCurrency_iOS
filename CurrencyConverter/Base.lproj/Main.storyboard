@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="b4W-ox-4Gh">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,112 +17,156 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62o-xq-40p">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4M-Kg-xVr">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mae-PO-TCL">
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="⇅">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOZ-mI-TJs">
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="⇄">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kL-sy-Egx" customClass="CurrencyView" customModule="CurrencyConverter" customModuleProvider="target">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="62o-xq-40p">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mae-PO-TCL">
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="⇅">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOZ-mI-TJs">
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="⇄">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="AOZ-mI-TJs" firstAttribute="centerY" secondItem="62o-xq-40p" secondAttribute="centerY" id="G8E-IQ-JSV"/>
+                                            <constraint firstItem="Mae-PO-TCL" firstAttribute="centerX" secondItem="62o-xq-40p" secondAttribute="centerX" id="Rmh-O1-i0Y"/>
+                                            <constraint firstAttribute="width" priority="750" constant="32" id="TSR-bQ-qAn"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="VvT-Fb-Vec"/>
+                                            <constraint firstAttribute="height" priority="750" constant="32" id="c6h-RA-yWK"/>
+                                            <constraint firstItem="Mae-PO-TCL" firstAttribute="centerY" secondItem="62o-xq-40p" secondAttribute="centerY" id="eix-rl-TRy"/>
+                                            <constraint firstItem="AOZ-mI-TJs" firstAttribute="centerX" secondItem="62o-xq-40p" secondAttribute="centerX" id="nhq-O2-8PI"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="q1h-y9-lhP"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="Mae-PO-TCL"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="q1h-y9-lhP"/>
+                                                <exclude reference="Rmh-O1-i0Y"/>
+                                                <exclude reference="eix-rl-TRy"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="Mae-PO-TCL"/>
+                                                <exclude reference="AOZ-mI-TJs"/>
+                                            </mask>
+                                            <mask key="constraints">
+                                                <exclude reference="TSR-bQ-qAn"/>
+                                                <exclude reference="VvT-Fb-Vec"/>
+                                                <include reference="q1h-y9-lhP"/>
+                                                <exclude reference="G8E-IQ-JSV"/>
+                                                <exclude reference="nhq-O2-8PI"/>
+                                                <include reference="Rmh-O1-i0Y"/>
+                                                <include reference="eix-rl-TRy"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiw-47-iEe" customClass="CurrencyView" customModule="CurrencyConverter" customModuleProvider="target">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="AOZ-mI-TJs" firstAttribute="centerY" secondItem="62o-xq-40p" secondAttribute="centerY" id="G8E-IQ-JSV"/>
-                                    <constraint firstItem="Mae-PO-TCL" firstAttribute="centerX" secondItem="62o-xq-40p" secondAttribute="centerX" id="Rmh-O1-i0Y"/>
-                                    <constraint firstAttribute="width" constant="32" id="TSR-bQ-qAn"/>
-                                    <constraint firstItem="Mae-PO-TCL" firstAttribute="centerY" secondItem="62o-xq-40p" secondAttribute="centerY" id="eix-rl-TRy"/>
-                                    <constraint firstItem="AOZ-mI-TJs" firstAttribute="centerX" secondItem="62o-xq-40p" secondAttribute="centerX" id="nhq-O2-8PI"/>
-                                    <constraint firstAttribute="height" constant="32" id="q1h-y9-lhP"/>
+                                    <constraint firstItem="wiw-47-iEe" firstAttribute="height" secondItem="3kL-sy-Egx" secondAttribute="height" id="21J-sP-Red"/>
+                                    <constraint firstAttribute="trailing" secondItem="wiw-47-iEe" secondAttribute="trailing" id="3C6-U0-rz7"/>
+                                    <constraint firstItem="3kL-sy-Egx" firstAttribute="top" secondItem="z4M-Kg-xVr" secondAttribute="top" id="GnI-TB-Xof"/>
+                                    <constraint firstItem="62o-xq-40p" firstAttribute="leading" secondItem="3kL-sy-Egx" secondAttribute="trailing" constant="4" id="IgQ-xA-YLE"/>
+                                    <constraint firstItem="wiw-47-iEe" firstAttribute="top" secondItem="62o-xq-40p" secondAttribute="bottom" constant="4" id="Ivn-eL-hft"/>
+                                    <constraint firstItem="62o-xq-40p" firstAttribute="top" secondItem="z4M-Kg-xVr" secondAttribute="top" id="M9C-lS-kMo"/>
+                                    <constraint firstItem="wiw-47-iEe" firstAttribute="width" secondItem="3kL-sy-Egx" secondAttribute="width" id="O6R-g2-mdR"/>
+                                    <constraint firstAttribute="trailing" secondItem="62o-xq-40p" secondAttribute="trailing" id="QYD-sk-RgW"/>
+                                    <constraint firstItem="62o-xq-40p" firstAttribute="leading" secondItem="z4M-Kg-xVr" secondAttribute="leading" id="SfF-Jj-g8O"/>
+                                    <constraint firstAttribute="bottom" secondItem="3kL-sy-Egx" secondAttribute="bottom" id="Td3-HW-tv8"/>
+                                    <constraint firstItem="wiw-47-iEe" firstAttribute="leading" secondItem="z4M-Kg-xVr" secondAttribute="leading" id="Utz-h9-FB6"/>
+                                    <constraint firstAttribute="bottom" secondItem="wiw-47-iEe" secondAttribute="bottom" id="YCJ-ln-7zs"/>
+                                    <constraint firstAttribute="bottom" secondItem="62o-xq-40p" secondAttribute="bottom" id="eNL-km-aSG"/>
+                                    <constraint firstItem="wiw-47-iEe" firstAttribute="top" secondItem="z4M-Kg-xVr" secondAttribute="top" id="iCa-nE-Lm5"/>
+                                    <constraint firstItem="3kL-sy-Egx" firstAttribute="leading" secondItem="z4M-Kg-xVr" secondAttribute="leading" id="mSs-6q-fSN"/>
+                                    <constraint firstItem="62o-xq-40p" firstAttribute="top" secondItem="3kL-sy-Egx" secondAttribute="bottom" constant="4" id="qOp-Rv-Uad"/>
+                                    <constraint firstAttribute="trailing" secondItem="3kL-sy-Egx" secondAttribute="trailing" id="sFe-ex-pvL"/>
+                                    <constraint firstItem="wiw-47-iEe" firstAttribute="leading" secondItem="62o-xq-40p" secondAttribute="trailing" constant="4" id="uMO-WJ-eN6"/>
                                 </constraints>
                                 <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="Mae-PO-TCL"/>
-                                    </mask>
                                     <mask key="constraints">
-                                        <exclude reference="q1h-y9-lhP"/>
-                                        <exclude reference="Rmh-O1-i0Y"/>
-                                        <exclude reference="eix-rl-TRy"/>
+                                        <exclude reference="sFe-ex-pvL"/>
+                                        <exclude reference="QYD-sk-RgW"/>
+                                        <exclude reference="SfF-Jj-g8O"/>
+                                        <exclude reference="qOp-Rv-Uad"/>
+                                        <exclude reference="21J-sP-Red"/>
+                                        <exclude reference="Ivn-eL-hft"/>
+                                        <exclude reference="Utz-h9-FB6"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="Mae-PO-TCL"/>
-                                        <exclude reference="AOZ-mI-TJs"/>
-                                    </mask>
                                     <mask key="constraints">
-                                        <exclude reference="TSR-bQ-qAn"/>
-                                        <include reference="q1h-y9-lhP"/>
-                                        <exclude reference="G8E-IQ-JSV"/>
-                                        <exclude reference="nhq-O2-8PI"/>
-                                        <include reference="Rmh-O1-i0Y"/>
-                                        <include reference="eix-rl-TRy"/>
+                                        <exclude reference="Td3-HW-tv8"/>
+                                        <include reference="sFe-ex-pvL"/>
+                                        <exclude reference="IgQ-xA-YLE"/>
+                                        <exclude reference="M9C-lS-kMo"/>
+                                        <include reference="QYD-sk-RgW"/>
+                                        <include reference="SfF-Jj-g8O"/>
+                                        <exclude reference="eNL-km-aSG"/>
+                                        <include reference="qOp-Rv-Uad"/>
+                                        <include reference="21J-sP-Red"/>
+                                        <include reference="Ivn-eL-hft"/>
+                                        <exclude reference="O6R-g2-mdR"/>
+                                        <include reference="Utz-h9-FB6"/>
+                                        <exclude reference="iCa-nE-Lm5"/>
+                                        <exclude reference="uMO-WJ-eN6"/>
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kL-sy-Egx" customClass="CurrencyView" customModule="CurrencyConverter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmt-tb-I9v">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDG-zn-Chq" customClass="GADBannerView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5ku-eh-xrL">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="320" id="hjl-BR-TVC">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="728"/>
+                                            </constraint>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiw-47-iEe" customClass="CurrencyView" customModule="CurrencyConverter" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="uDG-zn-Chq" secondAttribute="bottom" id="Go2-06-kjH"/>
+                                    <constraint firstItem="uDG-zn-Chq" firstAttribute="top" secondItem="Dmt-tb-I9v" secondAttribute="top" id="j3b-1G-9g9"/>
+                                    <constraint firstItem="uDG-zn-Chq" firstAttribute="centerX" secondItem="Dmt-tb-I9v" secondAttribute="centerX" id="l87-de-WMk"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wiw-47-iEe" firstAttribute="height" secondItem="3kL-sy-Egx" secondAttribute="height" id="38B-hy-sAg"/>
-                            <constraint firstItem="62o-xq-40p" firstAttribute="leading" secondItem="3kL-sy-Egx" secondAttribute="trailing" constant="4" id="6fn-wE-lhC"/>
-                            <constraint firstItem="wiw-47-iEe" firstAttribute="leading" secondItem="62o-xq-40p" secondAttribute="trailing" constant="4" id="8CJ-Y2-dsR"/>
-                            <constraint firstItem="wiw-47-iEe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="93a-3T-q2x"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="62o-xq-40p" secondAttribute="bottom" constant="8" id="Ap5-iT-A5F"/>
-                            <constraint firstItem="wiw-47-iEe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ht8-lU-srv"/>
-                            <constraint firstItem="wiw-47-iEe" firstAttribute="width" secondItem="3kL-sy-Egx" secondAttribute="width" id="IUa-ZQ-sok"/>
-                            <constraint firstItem="wiw-47-iEe" firstAttribute="top" secondItem="62o-xq-40p" secondAttribute="bottom" constant="4" id="JgY-4z-W97"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wiw-47-iEe" secondAttribute="bottom" constant="8" id="YhK-gT-ctc"/>
-                            <constraint firstItem="62o-xq-40p" firstAttribute="top" secondItem="3kL-sy-Egx" secondAttribute="bottom" constant="4" id="ZTh-p9-3xb"/>
-                            <constraint firstItem="62o-xq-40p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fQh-QR-sm4"/>
-                            <constraint firstItem="3kL-sy-Egx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fVV-lM-5aq"/>
-                            <constraint firstItem="3kL-sy-Egx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="neI-8g-5id"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3kL-sy-Egx" secondAttribute="bottom" constant="8" id="rYs-Q1-8zX"/>
-                            <constraint firstAttribute="trailing" secondItem="wiw-47-iEe" secondAttribute="trailing" id="rZg-wU-KTv"/>
-                            <constraint firstItem="62o-xq-40p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sBA-K8-3dj"/>
-                            <constraint firstAttribute="trailing" secondItem="3kL-sy-Egx" secondAttribute="trailing" id="sem-X9-slV"/>
-                            <constraint firstAttribute="trailing" secondItem="62o-xq-40p" secondAttribute="trailing" id="uTt-8t-peL"/>
+                            <constraint firstAttribute="trailing" secondItem="Dmt-tb-I9v" secondAttribute="trailing" id="AL8-YT-O7e"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dmt-tb-I9v" secondAttribute="bottom" constant="-50" id="HBt-m4-Afa">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-90"/>
+                            </constraint>
+                            <constraint firstItem="z4M-Kg-xVr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JTv-CQ-4Xa"/>
+                            <constraint firstItem="Dmt-tb-I9v" firstAttribute="top" secondItem="z4M-Kg-xVr" secondAttribute="bottom" constant="8" id="Mtn-q2-Bhs">
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="z4M-Kg-xVr" secondAttribute="trailing" id="PtC-YB-4Ta"/>
+                            <constraint firstItem="Dmt-tb-I9v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sef-Y5-cpg"/>
+                            <constraint firstItem="z4M-Kg-xVr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="csj-HJ-E8O">
+                                <variation key="heightClass=regular-widthClass=regular" constant="16"/>
+                            </constraint>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="sem-X9-slV"/>
-                                <exclude reference="ZTh-p9-3xb"/>
-                                <exclude reference="sBA-K8-3dj"/>
-                                <exclude reference="uTt-8t-peL"/>
-                                <exclude reference="38B-hy-sAg"/>
-                                <exclude reference="93a-3T-q2x"/>
-                                <exclude reference="JgY-4z-W97"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="sem-X9-slV"/>
-                                <exclude reference="6fn-wE-lhC"/>
-                                <include reference="ZTh-p9-3xb"/>
-                                <exclude reference="fQh-QR-sm4"/>
-                                <include reference="sBA-K8-3dj"/>
-                                <include reference="uTt-8t-peL"/>
-                                <include reference="38B-hy-sAg"/>
-                                <exclude reference="8CJ-Y2-dsR"/>
-                                <include reference="93a-3T-q2x"/>
-                                <exclude reference="Ht8-lU-srv"/>
-                                <exclude reference="IUa-ZQ-sok"/>
-                                <include reference="JgY-4z-W97"/>
-                                <exclude reference="Ap5-iT-A5F"/>
-                                <exclude reference="rYs-Q1-8zX"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Rx Currency Converter" id="H0T-f2-g8j">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="K2Y-d5-eJi">
@@ -131,6 +174,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerPositionConstraint" destination="HBt-m4-Afa" id="a6D-HN-kVa"/>
+                        <outlet property="bannerView" destination="uDG-zn-Chq" id="VXY-Vm-u3Y"/>
                         <outlet property="lowerCurrencyView" destination="wiw-47-iEe" id="Cm6-Op-BOV"/>
                         <outlet property="reloadButton" destination="K2Y-d5-eJi" id="awL-9V-BXf"/>
                         <outlet property="swapHButton" destination="AOZ-mI-TJs" id="Pe2-kY-5sn"/>
@@ -141,13 +186,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="136"/>
+            <point key="canvasLocation" x="319.19999999999999" y="134.48275862068968"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YHV-nO-Mks">
             <objects>
                 <navigationController id="b4W-ox-4Gh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3eh-mO-kph">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3eh-mO-kph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -176,7 +221,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BVn-cS-4u6" id="Nbw-j9-5Md">
-                                    <frame key="frameInset" width="375" height="47"/>
+                                    <frame key="frameInset" width="375" height="47.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇰🇷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxv-1W-w9Y">
