@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "⇄"; ObjectID = "AOZ-mI-TJs"; */
+"AOZ-mI-TJs.normalTitle" = "⇄";
+
+/* Class = "UINavigationItem"; title = "Rx Currency Converter"; ObjectID = "H0T-f2-g8j"; */
+"H0T-f2-g8j.title" = "Minimal Currency";
+
+/* Class = "UIButton"; normalTitle = "⇅"; ObjectID = "Mae-PO-TCL"; */
+"Mae-PO-TCL.normalTitle" = "⇅";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "WRx-jO-RNh"; */
+"WRx-jO-RNh.title" = "キャンセル";
+
+/* Class = "UILabel"; text = "🇰🇷"; ObjectID = "Yxv-1W-w9Y"; */
+"Yxv-1W-w9Y.text" = "🇰🇷";
+
+/* Class = "UILabel"; text = "KRW"; ObjectID = "ZxW-05-nj5"; */
+"ZxW-05-nj5.text" = "KRW";
+
+/* Class = "UIBarButtonItem"; title = "⌧"; ObjectID = "cyX-kS-MmB"; */
+"cyX-kS-MmB.title" = "⌧";
+
+/* Class = "UINavigationItem"; title = "Select Currency"; ObjectID = "jRc-TU-8xx"; */
+"jRc-TU-8xx.title" = "通貨選択";
+
+/* Class = "UILabel"; text = "✓"; ObjectID = "o6w-Ix-OK9"; */
+"o6w-Ix-OK9.text" = "✓";
+
+/* Class = "UILabel"; text = "South Korea"; ObjectID = "uvh-Mh-ech"; */
+"uvh-Mh-ech.text" = "South Korea";

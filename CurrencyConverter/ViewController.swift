@@ -61,7 +61,11 @@ extension ViewController : GADBannerViewDelegate {
             guard let sself = self else { return }
             print("Showing Ad")
             let request = GADRequest()
-            request.testDevices = ["18f57722c93de6cc252c881e6bfc927e"]
+            #if (arch(i386) || arch(x86_64)) && os(iOS)
+                request.testDevices = [kGADSimulatorID]
+            #else
+                request.testDevices = ["18f57722c93de6cc252c881e6bfc927e"]
+            #endif
             sself.bannerView.load(request)
         }
     }
@@ -136,7 +140,8 @@ extension ViewController {
                         guard let product = Store.instance.product(Product.adRemove) else { return }
                         sself.rx.actionSheet(sender: sself.removeAdButton,
                                              items: ["\(product.localizedTitle): \(product.localizedPrice)",
-                                                "Restore purchase"])
+                                                NSLocalizedString("Restore Purchase", comment: "")
+                            ])
                             .subscribe(onNext: { [weak product] (index, item) in
                                 guard let sproduct = product else { return }
                                 switch index {
@@ -195,7 +200,9 @@ extension ViewController {
         do {
             Observable.combineLatest(
                 CurrencyFactory.instance.rx.rateDateString, rx.isLoading) { (string, isLoading) in
-                    return isLoading ? "Refreshing..." : "Rates at \(string)"
+                    return isLoading ?
+                        NSLocalizedString("Refreshing...", comment: "") :
+                        String.localizedStringWithFormat(NSLocalizedString("Rates at %@", comment: ""), string)
                 }
                 .observeOn(MainScheduler.instance)
                 .bindTo(rx.title)
@@ -375,7 +382,9 @@ extension Reactive where Base : ViewController {
                 })
                 alert.addAction(action)
             }
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in observer.onCompleted() }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
+                                          style: .cancel,
+                                          handler: { _ in observer.onCompleted() }))
             
             sbase.present(alert, animated: true, completion: nil)
             

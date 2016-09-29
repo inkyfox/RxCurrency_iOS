@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  CurrencyConverter
+
+  Created by indy on 2016. 9. 29..
+  Copyright © 2016년 Gen X Hippies Company. All rights reserved.
+*/
+
+"Restore Purchase" = "구입내역 복원";
+"Refreshing..." = "환율 정보 갱신중...";
+"Rates at %@" = "%@의 환율";
+"Cancel" = "취소";

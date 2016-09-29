@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  CurrencyConverter
+
+  Created by indy on 2016. 9. 29..
+  Copyright © 2016년 Gen X Hippies Company. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "為替レート";

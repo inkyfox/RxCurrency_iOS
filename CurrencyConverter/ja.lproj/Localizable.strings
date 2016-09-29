@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  CurrencyConverter
+
+  Created by indy on 2016. 9. 29..
+  Copyright © 2016년 Gen X Hippies Company. All rights reserved.
+*/
+
+"Restore Purchase" = "購入復元";
+"Refreshing..." = "為替レート更新中...";
+"Rates at %@" = "%@の為替レート";
+"Cancel" = "
+キャンセル";

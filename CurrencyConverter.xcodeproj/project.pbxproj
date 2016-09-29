@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		54473470484154A5255A6187 /* Pods_CurrencyConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE174E870C49507E8C585D6 /* Pods_CurrencyConverter.framework */; };
 		A9005AFD1D943B0E0033A8CC /* CurrencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9005AFC1D943B0E0033A8CC /* CurrencyFactory.swift */; };
+		A91BEEC91D9CECE100204B9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A91BEECB1D9CECE100204B9E /* InfoPlist.strings */; };
 		A928173F1D92102B005DC2AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928173E1D92102B005DC2AF /* AppDelegate.swift */; };
 		A92817411D92102B005DC2AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92817401D92102B005DC2AF /* ViewController.swift */; };
 		A92817441D92102B005DC2AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92817421D92102B005DC2AF /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		A9EFAD8C1D9ABD2E0041BCA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9EFAD8B1D9ABD2E0041BCA1 /* GoogleService-Info.plist */; };
 		A9EFAD8F1D9B60990041BCA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFAD8E1D9B60990041BCA1 /* StoreKit.framework */; };
 		A9EFAD921D9B93E70041BCA1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFAD911D9B93E70041BCA1 /* Store.swift */; };
+		A9EFADAC1D9CCA650041BCA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9EFADAE1D9CCA650041BCA1 /* Localizable.strings */; };
 		BE710E07F05B33F4EA51806A /* Pods_CurrencyConverterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42962186644C26F4548407 /* Pods_CurrencyConverterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,13 +54,15 @@
 		5E42962186644C26F4548407 /* Pods_CurrencyConverterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyConverterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7389A3A60B14B2109EBC6996 /* Pods-CurrencyConverterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests.release.xcconfig"; sourceTree = "<group>"; };
 		A9005AFC1D943B0E0033A8CC /* CurrencyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFactory.swift; sourceTree = "<group>"; };
+		A91BEECA1D9CECE100204B9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A91BEECC1D9CECE300204B9E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A91BEECD1D9CECE300204B9E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A928173B1D92102B005DC2AF /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A928173E1D92102B005DC2AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A92817401D92102B005DC2AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A92817431D92102B005DC2AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A92817451D92102B005DC2AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A92817481D92102B005DC2AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A928174A1D92102B005DC2AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A928174F1D92102B005DC2AF /* CurrencyConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92817551D92102B005DC2AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A928175E1D921650005DC2AF /* CurrencyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyView.xib; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 		A9EFAD8E1D9B60990041BCA1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A9EFAD901D9B609F0041BCA1 /* CurrencyConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CurrencyConverter.entitlements; sourceTree = "<group>"; };
 		A9EFAD911D9B93E70041BCA1 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		A9EFAD981D9CC2830041BCA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		A9EFAD991D9CC3BC0041BCA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A9EFAD9A1D9CC3BC0041BCA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		A9EFAD9B1D9CC3C60041BCA1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A9EFAD9C1D9CC3C60041BCA1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		A9EFADAD1D9CCA650041BCA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9EFADAF1D9CCA670041BCA1 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9EFADB01D9CCA680041BCA1 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A9EFADB11D9CD6020041BCA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		C35969532F4389B0181B3726 /* Pods-CurrencyConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,9 +171,11 @@
 				A92817601D921760005DC2AF /* BackgroundColoredButton.swift */,
 				A92817641D924C6F005DC2AF /* NumberButton.swift */,
 				A96BAEE41D93052C0008764D /* OnOffObservable.swift */,
-				A928174A1D92102B005DC2AF /* Info.plist */,
+				A9EFADB21D9CD6020041BCA1 /* Info.plist */,
 				A9EFAD8B1D9ABD2E0041BCA1 /* GoogleService-Info.plist */,
 				A92817451D92102B005DC2AF /* Assets.xcassets */,
+				A9EFADAE1D9CCA650041BCA1 /* Localizable.strings */,
+				A91BEECB1D9CECE100204B9E /* InfoPlist.strings */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -268,6 +283,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				ja,
 			);
 			mainGroup = A92817321D92102B005DC2AF;
 			productRefGroup = A928173C1D92102B005DC2AF /* Products */;
@@ -286,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A92817491D92102B005DC2AF /* LaunchScreen.storyboard in Resources */,
+				A91BEEC91D9CECE100204B9E /* InfoPlist.strings in Resources */,
+				A9EFADAC1D9CCA650041BCA1 /* Localizable.strings in Resources */,
 				A92817461D92102B005DC2AF /* Assets.xcassets in Resources */,
 				A9EFAD8C1D9ABD2E0041BCA1 /* GoogleService-Info.plist in Resources */,
 				A92817441D92102B005DC2AF /* Main.storyboard in Resources */,
@@ -452,10 +471,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A91BEECB1D9CECE100204B9E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A91BEECA1D9CECE100204B9E /* Base */,
+				A91BEECC1D9CECE300204B9E /* ko */,
+				A91BEECD1D9CECE300204B9E /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		A92817421D92102B005DC2AF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A92817431D92102B005DC2AF /* Base */,
+				A9EFAD981D9CC2830041BCA1 /* en */,
+				A9EFAD9A1D9CC3BC0041BCA1 /* ko */,
+				A9EFAD9C1D9CC3C60041BCA1 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -464,8 +496,28 @@
 			isa = PBXVariantGroup;
 			children = (
 				A92817481D92102B005DC2AF /* Base */,
+				A9EFAD991D9CC3BC0041BCA1 /* ko */,
+				A9EFAD9B1D9CC3C60041BCA1 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A9EFADAE1D9CCA650041BCA1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9EFADAD1D9CCA650041BCA1 /* Base */,
+				A9EFADAF1D9CCA670041BCA1 /* ko */,
+				A9EFADB01D9CCA680041BCA1 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A9EFADB21D9CD6020041BCA1 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9EFADB11D9CD6020041BCA1 /* Base */,
+			);
+			name = Info.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -475,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -526,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
