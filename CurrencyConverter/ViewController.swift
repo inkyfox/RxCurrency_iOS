@@ -14,6 +14,7 @@ import GoogleMobileAds
 class ViewController: UIViewController {
 
     @IBOutlet weak var reloadButton: UIBarButtonItem!
+    @IBOutlet var removeAdButton: UIBarButtonItem!
     @IBOutlet weak var upperCurrencyView: CurrencyView!
     @IBOutlet weak var lowerCurrencyView: CurrencyView!
     @IBOutlet weak var swapHButton: UIButton!
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
     fileprivate let disposeBag = DisposeBag()
     fileprivate var numberUnlocked = true
     fileprivate var reloadBag = Variable<DisposeBag?>(nil)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,11 +37,6 @@ class ViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.delegate = self
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
-            let request = GADRequest()
-            request.testDevices = ["18f57722c93de6cc252c881e6bfc927e"]
-            self?.bannerView.load(request)
-        }
         
     }
 
@@ -54,8 +50,32 @@ class ViewController: UIViewController {
 
 extension ViewController : GADBannerViewDelegate {
     func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+        if Settings.instance.adRemoved ?? false { return }
         bannerPositionConstraint.constant = 0
         UIView.animate(withDuration: 0.4) { [weak self] in self?.view.layoutIfNeeded() }
+        navigationItem.leftBarButtonItem = removeAdButton
+    }
+    
+    func prepareAd() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
+            guard let sself = self else { return }
+            print("Showing Ad")
+            let request = GADRequest()
+            request.testDevices = ["18f57722c93de6cc252c881e6bfc927e"]
+            sself.bannerView.load(request)
+        }
+    }
+    
+    func removeAd() {
+        Settings.instance.adRemoved = true
+        Settings.instance.synchronize()
+        
+        navigationItem.leftBarButtonItem = nil
+        bannerPositionConstraint.constant = -bannerView.bounds.height
+        UIView.animate(withDuration: 0.4,
+                       animations: { [weak self] in self?.view.layoutIfNeeded() },
+                       completion: { [weak self] _ in self?.view.layoutIfNeeded() })
+        UIView.animate(withDuration: 0.4) { [weak self] in self?.bannerView.isHidden = true }
     }
 }
 
@@ -93,6 +113,49 @@ extension ViewController {
 
 extension ViewController {
     fileprivate func setupSubscriptions() {
+        // ad
+        do {
+            navigationItem.leftBarButtonItem = nil
+            if let removed = Settings.instance.adRemoved, removed {
+            } else {
+                Store.instance.rx.productInfo(Product.adRemove)
+                    .map { _ in return }
+                    .do(onError: { error in Analytics.productInfoLoadFailed(error: error.localizedDescription).send() })
+                    .bindNext(prepareAd)
+                    .addDisposableTo(disposeBag)
+
+                Store.instance.rx.purchased(Product.adRemove)
+                    .map { _ in return }
+                    .bindNext(removeAd)
+                    .addDisposableTo(disposeBag)
+                        
+                removeAdButton.rx.tap
+                    .do(onNext: { _ in Analytics.buttonStore.send() })
+                    .subscribe(onNext: { [weak self] in
+                        guard let sself = self else { return }
+                        guard let product = Store.instance.product(Product.adRemove) else { return }
+                        sself.rx.actionSheet(sender: sself.removeAdButton,
+                                             items: ["\(product.localizedTitle): \(product.localizedPrice)",
+                                                "Restore purchase"])
+                            .subscribe(onNext: { [weak product] (index, item) in
+                                guard let sproduct = product else { return }
+                                switch index {
+                                case 0:
+                                    Analytics.buttonPurchase.send()
+                                    Store.instance.purchase(product: sproduct)
+                                case 1:
+                                    Analytics.buttonRestore.send()
+                                    Store.instance.restore()
+                                default: break
+                                }
+                                })
+                            .addDisposableTo(sself.disposeBag)
+                        })
+                    .addDisposableTo(disposeBag)
+                
+                Store.instance.loadProducts()
+            }
+        }
         
         // reload
         do {
@@ -289,5 +352,37 @@ extension Reactive where Base : ViewController {
         return base.reloadBag.asObservable().map { $0 != nil }
     }
     
+    func actionSheet(sender: AnyObject, items: [String]) -> Observable<(index: Int, value: String)> {
+        return Observable.create({ [weak base] (observer) -> Disposable in
+            guard let sbase = base else { return Disposables.create() }
+            
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+            if let presenter = alert.popoverPresentationController {
+                if let view = sender as? UIView {
+                    presenter.sourceView = view
+                } else if let barButton = sender as? UIBarButtonItem {
+                    presenter.barButtonItem = barButton
+                    presenter.sourceView = sbase.view
+                } else {
+                    return Disposables.create()
+                }
+            }
+            
+            items.enumerated().forEach { (index, item) in
+                let action = UIAlertAction(title: item, style: .default, handler: { (action) in
+                    observer.onNext((index: index, value: item))
+                    observer.onCompleted()
+                })
+                alert.addAction(action)
+            }
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in observer.onCompleted() }))
+            
+            sbase.present(alert, animated: true, completion: nil)
+            
+            return Disposables.create {
+                alert.dismiss(animated: false, completion: nil)
+            }
+            })
+    }
 }
 

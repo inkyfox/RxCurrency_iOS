@@ -25,6 +25,13 @@ enum Analytics {
     case currencySelector(viewID: String)
     case currencyChanged(viewID: String, from: Currency, to: Currency)
     
+    case productInfoLoadFailed(error: String)
+    case buttonStore
+    case buttonPurchase
+    case buttonRestore
+    case adRemovePurchased
+    case adRemoveRestored
+    
     var name: String {
         switch self {
         case .load: return "load_try"
@@ -40,6 +47,13 @@ enum Analytics {
             
         case .currencySelector: return "action_currencySelector"
         case .currencyChanged: return "action_currencyChanged"
+
+        case .productInfoLoadFailed: return "store_infoLoadFailed"
+        case .buttonStore: return "store_storeButton"
+        case .buttonPurchase: return "store_purchaseButton"
+        case .buttonRestore: return "store_restoreButton"
+        case .adRemovePurchased: return "store_adRemovePurchased"
+        case .adRemoveRestored: return "store_adRemoveRestored"
         }
     }
     
@@ -62,6 +76,9 @@ enum Analytics {
         case .currencyChanged(let viewID, let from, let to):
             return ["view" : NSString(string: viewID), "from" : NSString(string: from.code), "to" : NSString(string: to.code)]
 
+        case .productInfoLoadFailed(let error):
+            return ["error" : NSString(string: error)]
+            
         default:
             return nil
         }

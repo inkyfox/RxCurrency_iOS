@@ -13,6 +13,7 @@ import RxSwift
 fileprivate enum Key: String {
     case rateUpdatedTime, rateDate, rates
     case upperCurrency, lowerCurrency, lowerNumber
+    case adRemoved
 }
 
 class Settings : ReactiveCompatible {
@@ -20,6 +21,10 @@ class Settings : ReactiveCompatible {
     static let instance = Settings()
     
     private var storage: UserDefaults = UserDefaults.standard
+    
+    private init() {
+
+    }
     
     var rateUpdatedTime: TimeInterval? {
         get { return storage.double(forKey: Key.rateUpdatedTime.rawValue) }
@@ -61,13 +66,16 @@ class Settings : ReactiveCompatible {
     var lowerCurrency: Currency? {
         get { return CurrencyFactory.instance.currency(ofCode: storage.string(forKey: Key.lowerCurrency.rawValue)) }
         set { storage.set(newValue?.code, forKey: Key.lowerCurrency.rawValue) }
-        
     }
     
     var lowerNumber: Double? {
         get { return storage.double(forKey: Key.lowerNumber.rawValue) }
         set { storage.set(newValue, forKey: Key.lowerNumber.rawValue) }
-        
+    }
+
+    var adRemoved: Bool? {
+        get { return storage.bool(forKey: Key.adRemoved.rawValue) }
+        set { storage.set(newValue, forKey: Key.adRemoved.rawValue) }
     }
 
     func synchronize() {

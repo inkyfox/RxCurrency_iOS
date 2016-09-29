@@ -169,6 +169,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rx Currency Converter" id="H0T-f2-g8j">
+                        <barButtonItem key="leftBarButtonItem" title="⌧" id="cyX-kS-MmB">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="K2Y-d5-eJi">
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -178,6 +181,7 @@
                         <outlet property="bannerView" destination="uDG-zn-Chq" id="VXY-Vm-u3Y"/>
                         <outlet property="lowerCurrencyView" destination="wiw-47-iEe" id="Cm6-Op-BOV"/>
                         <outlet property="reloadButton" destination="K2Y-d5-eJi" id="awL-9V-BXf"/>
+                        <outlet property="removeAdButton" destination="cyX-kS-MmB" id="Ygd-t9-Seq"/>
                         <outlet property="swapHButton" destination="AOZ-mI-TJs" id="Pe2-kY-5sn"/>
                         <outlet property="swapVButton" destination="Mae-PO-TCL" id="WdX-OB-sD4"/>
                         <outlet property="upperCurrencyView" destination="3kL-sy-Egx" id="DDH-Kp-nT3"/>
@@ -221,7 +225,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BVn-cS-4u6" id="Nbw-j9-5Md">
-                                    <frame key="frameInset" width="375" height="47.5"/>
+                                    <frame key="frameInset" width="375" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇰🇷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxv-1W-w9Y">

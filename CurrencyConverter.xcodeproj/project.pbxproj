@@ -30,6 +30,8 @@
 		A988B0731D961A5500D19A78 /* CurrencySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988B0721D961A5500D19A78 /* CurrencySelectorViewController.swift */; };
 		A9EFAD8A1D9AB7E50041BCA1 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFAD891D9AB7E50041BCA1 /* Analytics.swift */; };
 		A9EFAD8C1D9ABD2E0041BCA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9EFAD8B1D9ABD2E0041BCA1 /* GoogleService-Info.plist */; };
+		A9EFAD8F1D9B60990041BCA1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EFAD8E1D9B60990041BCA1 /* StoreKit.framework */; };
+		A9EFAD921D9B93E70041BCA1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFAD911D9B93E70041BCA1 /* Store.swift */; };
 		BE710E07F05B33F4EA51806A /* Pods_CurrencyConverterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E42962186644C26F4548407 /* Pods_CurrencyConverterTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,9 @@
 		A988B0721D961A5500D19A78 /* CurrencySelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencySelectorViewController.swift; sourceTree = "<group>"; };
 		A9EFAD891D9AB7E50041BCA1 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
 		A9EFAD8B1D9ABD2E0041BCA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9EFAD8E1D9B60990041BCA1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A9EFAD901D9B609F0041BCA1 /* CurrencyConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CurrencyConverter.entitlements; sourceTree = "<group>"; };
+		A9EFAD911D9B93E70041BCA1 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		C35969532F4389B0181B3726 /* Pods-CurrencyConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyConverter.release.xcconfig"; path = "Pods/Target Support Files/Pods-CurrencyConverter/Pods-CurrencyConverter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54473470484154A5255A6187 /* Pods_CurrencyConverter.framework in Frameworks */,
+				A9EFAD8F1D9B60990041BCA1 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,17 +138,19 @@
 		A928173D1D92102B005DC2AF /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				A9EFAD901D9B609F0041BCA1 /* CurrencyConverter.entitlements */,
 				A928173E1D92102B005DC2AF /* AppDelegate.swift */,
 				A92817471D92102B005DC2AF /* LaunchScreen.storyboard */,
 				A92817421D92102B005DC2AF /* Main.storyboard */,
 				A9EFAD891D9AB7E50041BCA1 /* Analytics.swift */,
+				A96B9CB31D98B20400FD5CCF /* Settings.swift */,
+				A9EFAD911D9B93E70041BCA1 /* Store.swift */,
 				A92817401D92102B005DC2AF /* ViewController.swift */,
 				A988B0721D961A5500D19A78 /* CurrencySelectorViewController.swift */,
 				A96B5AA21D93BE9F004A5826 /* Currency.swift */,
 				A96B9CB51D98BD1100FD5CCF /* CurrencyRate.swift */,
 				A9005AFC1D943B0E0033A8CC /* CurrencyFactory.swift */,
 				A96B9CB11D984FC600FD5CCF /* CurrencyNotification.swift */,
-				A96B9CB31D98B20400FD5CCF /* Settings.swift */,
 				A96B9CAD1D96F73000FD5CCF /* API.swift */,
 				A928175E1D921650005DC2AF /* CurrencyView.xib */,
 				A92817621D923E1B005DC2AF /* CurrencyView.swift */,
@@ -169,6 +177,7 @@
 		B284FFBCF3776C6EE5BC6A33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9EFAD8E1D9B60990041BCA1 /* StoreKit.framework */,
 				A96B9CAF1D9842D700FD5CCF /* CoreLocation.framework */,
 				3CE174E870C49507E8C585D6 /* Pods_CurrencyConverter.framework */,
 				5E42962186644C26F4548407 /* Pods_CurrencyConverterTests.framework */,
@@ -235,6 +244,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = XH2F8QV9GT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A928174E1D92102B005DC2AF = {
 						CreatedOnToolsVersion = 8.0;
@@ -400,6 +417,7 @@
 				A92817411D92102B005DC2AF /* ViewController.swift in Sources */,
 				A96B9CB41D98B20400FD5CCF /* Settings.swift in Sources */,
 				A96BAEE51D93052C0008764D /* OnOffObservable.swift in Sources */,
+				A9EFAD921D9B93E70041BCA1 /* Store.swift in Sources */,
 				A928173F1D92102B005DC2AF /* AppDelegate.swift in Sources */,
 				A96B5AA11D93BD51004A5826 /* CurrencyViewModel.swift in Sources */,
 				A988B0731D961A5500D19A78 /* CurrencySelectorViewController.swift in Sources */,
@@ -554,6 +572,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CurrencyConverter/CurrencyConverter.entitlements;
 				DEVELOPMENT_TEAM = XH2F8QV9GT;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -570,6 +589,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CurrencyConverter/CurrencyConverter.entitlements;
 				DEVELOPMENT_TEAM = XH2F8QV9GT;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
