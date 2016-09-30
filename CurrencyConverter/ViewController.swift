@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         
         setupSubscriptions()
 
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-2709072081024814/7764899684"
         bannerView.rootViewController = self
         bannerView.delegate = self
         
@@ -57,17 +57,14 @@ extension ViewController : GADBannerViewDelegate {
     }
     
     func prepareAd() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [weak self] in
-            guard let sself = self else { return }
-            print("Showing Ad")
-            let request = GADRequest()
-            #if (arch(i386) || arch(x86_64)) && os(iOS)
-                request.testDevices = [kGADSimulatorID]
-            #else
-                request.testDevices = ["18f57722c93de6cc252c881e6bfc927e"]
-            #endif
-            sself.bannerView.load(request)
-        }
+        print("Showing Ad")
+        let request = GADRequest()
+        //#if (arch(i386) || arch(x86_64)) && os(iOS)
+        //    request.testDevices = [kGADSimulatorID]
+        //#else
+        //    request.testDevices = ["18f57722c93de6cc252c881e6bfc927e"]
+        //#endif
+        self.bannerView.load(request)
     }
     
     func removeAd() {

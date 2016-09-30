@@ -92,6 +92,7 @@ import RxSwift
                 .addDisposableTo(disposeBag)
 
             viewModel.currency.rx.name
+                .map { "\($0 ?? "Unknown") >" }
                 .observeOn(MainScheduler.instance)
                 .bindTo(currencyNameButton.rx.title())
                 .addDisposableTo(disposeBag)
