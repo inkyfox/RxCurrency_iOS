@@ -57,7 +57,6 @@ extension ViewController : GADBannerViewDelegate {
     }
     
     func prepareAd() {
-        print("Showing Ad")
         let request = GADRequest()
         //#if (arch(i386) || arch(x86_64)) && os(iOS)
         //    request.testDevices = [kGADSimulatorID]
