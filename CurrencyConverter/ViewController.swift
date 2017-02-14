@@ -49,7 +49,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         if Settings.instance.adRemoved ?? false { return }
         bannerPositionConstraint.constant = 0
         UIView.animate(withDuration: 0.4) { [weak self] in self?.view.layoutIfNeeded() }
@@ -89,12 +89,10 @@ extension ViewController {
 
         let before = Date().timeIntervalSince1970
         
-        let reload = API.default.request(.latest)
-            .observeOn(ConcurrentDispatchQueueScheduler(globalConcurrentQueueQOS: .background))
+        API.default.request(.latest)
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .flatMap { CurrencyFactory.instance.rx.parse(json: $0) }
-            .observeOn(MainScheduler.instance).publish()
-        
-        reload
+            .observeOn(MainScheduler.instance)
             .subscribe(
                 onError: { [weak self] error in
                     self?.reloadBag.value = nil
@@ -106,8 +104,6 @@ extension ViewController {
                 }
             )
             .addDisposableTo(reloadDisposeBag)
-        
-        reload.connect().addDisposableTo(reloadDisposeBag)
     }
 }
 
@@ -183,12 +179,12 @@ extension ViewController {
             
             Observable.from([rx.isLoading.map { !$0 }, reloadButton.rx.tap.map { false } ])
                 .merge()
-                .bindTo(reloadButton.rx.enabled)
+                .bindTo(reloadButton.rx.isEnabled)
                 .addDisposableTo(disposeBag)
             
             reloadBag.asObservable()
                 .map { $0 != nil }
-                .bindTo(UIApplication.shared.rx.networkActivityIndicatorVisible)
+                .bindTo(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
                 .addDisposableTo(disposeBag)
         }
         
@@ -209,22 +205,19 @@ extension ViewController {
         do {
             let initial = CurrencyFactory.instance.rx.currencies.take(1).observeOn(MainScheduler.instance).publish()
             
-            initial
+            _ = initial
                 .map { [weak self] _ in self?.defaultUpperCurrency ?? Currency.null }
                 .bindTo(upperCurrencyView.rx.currency)
-                .addDisposableTo(disposeBag)
             
-            initial
+            _ = initial
                 .map { [weak self] _ in self?.defaultLowerCurrency ?? Currency.null }
                 .bindTo(lowerCurrencyView.rx.currency)
-                .addDisposableTo(disposeBag)
             
-            initial.map { _ in return }.bindNext(lockNumber).addDisposableTo(disposeBag)
+            _ = initial.map { _ in return }.bindNext(lockNumber)
 
-            initial
+            _ = initial
                 .map { _ in Settings.instance.lowerNumber ?? 0 }
                 .bindTo(lowerCurrencyView.rx.number)
-                .addDisposableTo(disposeBag)
 
             initial.connect().addDisposableTo(disposeBag)
         }
@@ -233,7 +226,7 @@ extension ViewController {
         do {
             let update = CurrencyFactory.instance.rx.currencies.skip(1).observeOn(MainScheduler.instance).publish()
 
-            update
+            _ = update
                 .subscribe(onNext: { [weak self] _ in
                     guard let sself = self else { return }
                     let currency = sself.upperCurrencyView.currency
@@ -241,15 +234,13 @@ extension ViewController {
                         CurrencyFactory.instance.contains(currencyCode: currency.code) ?
                             currency : sself.defaultUpperCurrency
                 })
-                .addDisposableTo(disposeBag)
             
-            update
+            _ = update
                 .subscribe(onNext: { [weak self] _ in
                     guard let sself = self else { return }
                     if CurrencyFactory.instance.contains(currencyCode: sself.lowerCurrencyView.currency.code) { return }
                     sself.lowerCurrencyView.currency = sself.defaultLowerCurrency
                 })
-                .addDisposableTo(disposeBag)
 
             update.connect().addDisposableTo(disposeBag)
 
@@ -268,8 +259,8 @@ extension ViewController {
                 .map(CurrencyFactory.instance.convert)
                 .publish()
             
-            toLower.map { _ in return }.bindNext(lockNumber).addDisposableTo(disposeBag)
-            toLower.bindTo(lowerCurrencyView.rx.number).addDisposableTo(disposeBag)
+            _ = toLower.map { _ in return }.bindNext(lockNumber)
+            _ = toLower.bindTo(lowerCurrencyView.rx.number)
             
             toLower.connect().addDisposableTo(disposeBag)
             
@@ -285,8 +276,8 @@ extension ViewController {
                 .map(CurrencyFactory.instance.convert)
                 .publish()
             
-            toUpper.map { _ in return }.bindNext(lockNumber).addDisposableTo(disposeBag)
-            toUpper.bindTo(upperCurrencyView.rx.number).addDisposableTo(disposeBag)
+            _ = toUpper.map { _ in return }.bindNext(lockNumber)
+            _ = toUpper.bindTo(upperCurrencyView.rx.number)
             
             toUpper.connect().addDisposableTo(disposeBag)
         }

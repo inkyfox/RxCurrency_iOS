@@ -116,11 +116,11 @@ import RxSwift
             
             let enabled = viewModel.currency.rx.isEnabled.observeOn(MainScheduler.instance).publish()
                 
-            enabled.bindTo(flagButton.rx.enabled).addDisposableTo(disposeBag)
-            enabled.bindTo(currencyNameButton.rx.enabled).addDisposableTo(disposeBag)
-            enabled.bindTo(slideBar.rx.enabled).addDisposableTo(disposeBag)
-            enabled.bindTo(buttonDel.rx.enabled).addDisposableTo(disposeBag)
-            enabled.bindTo(buttonReset.rx.enabled).addDisposableTo(disposeBag)
+            _ = enabled.bindTo(flagButton.rx.isEnabled)
+            _ = enabled.bindTo(currencyNameButton.rx.isEnabled)
+            _ = enabled.bindTo(slideBar.rx.isEnabled)
+            _ = enabled.bindTo(buttonDel.rx.isEnabled)
+            _ = enabled.bindTo(buttonReset.rx.isEnabled)
             
             enabled.connect().addDisposableTo(disposeBag)
         }
@@ -138,24 +138,24 @@ import RxSwift
             for (button, _) in nonZeroButtons {
                 Observable.combineLatest(enabled, isOne) { $0 && $1 }
                     .observeOn(MainScheduler.instance)
-                    .bindTo(button.rx.enabled)
+                    .bindTo(button.rx.isEnabled)
                     .addDisposableTo(disposeBag)
             }
             
             Observable.combineLatest(enabled, isNotEmpty, isOne) { $0 && $1 && $2 }
                 .observeOn(MainScheduler.instance)
-                .bindTo(button0.rx.enabled)
+                .bindTo(button0.rx.isEnabled)
                 .addDisposableTo(disposeBag)
 
             Observable.combineLatest(enabled, isNotEmpty, isTwo) { $0 && $1 && $2 }
                 .observeOn(MainScheduler.instance)
-                .bindTo(button00.rx.enabled)
+                .bindTo(button00.rx.isEnabled)
                 .addDisposableTo(disposeBag)
 
             
             Observable.combineLatest(enabled, isNotEmpty, isThree) { $0 && $1 && $2 }
                 .observeOn(MainScheduler.instance)
-                .bindTo(button000.rx.enabled)
+                .bindTo(button000.rx.isEnabled)
                 .addDisposableTo(disposeBag)
             
             isOne.connect().addDisposableTo(disposeBag)
@@ -185,8 +185,8 @@ import RxSwift
                 .from([flagButton.rx.tap, currencyNameButton.rx.tap])
                 .merge().publish()
             
-            showCurrency.map { false }.bindTo(flagButton.rx.enabled).addDisposableTo(disposeBag)
-            showCurrency.map { false }.bindTo(currencyNameButton.rx.enabled).addDisposableTo(disposeBag)
+            showCurrency.map { false }.bindTo(flagButton.rx.isEnabled).addDisposableTo(disposeBag)
+            showCurrency.map { false }.bindTo(currencyNameButton.rx.isEnabled).addDisposableTo(disposeBag)
             showCurrency.bindNext(showCurrencySelector).addDisposableTo(disposeBag)
             
             showCurrency.connect().addDisposableTo(disposeBag)

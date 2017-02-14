@@ -9,7 +9,6 @@
 import Foundation
 import RxCocoa
 import RxSwift
-@testable import CurrencyConverter
 
 struct SlideConverter {
     let maxDigitCount = 8

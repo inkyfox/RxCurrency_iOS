@@ -5,11 +5,11 @@ use_frameworks!
 #source 'https://github.com/CocoaPods/Specs.git'
 
 def pods
-    pod 'SwiftyJSON', '~> 3.0'
-    pod 'RxSwift',    '~> 3.0.0-beta.1'
-    pod 'RxCocoa',    '~> 3.0.0-beta.1'
-    pod 'RxDataSources',    '~> 1.0.0-beta.2'
-    pod 'RxAlamofire',    '~> 3.0.0-beta.1'
+    pod 'SwiftyJSON', '~> 3.1'
+    pod 'RxSwift',    '~> 3.2'
+    pod 'RxCocoa',    '~> 3.2'
+    pod 'RxDataSources',    '~> 1.0'
+    pod 'RxAlamofire',    '~> 3.0'
 end
 
 target 'CurrencyConverter' do
@@ -21,7 +21,7 @@ end
 
 target 'CurrencyConverterTests' do
     pods
-    pod 'RxTests',    '~> 3.0.0-beta.1'
+    pod 'RxTest',    '~> 3.2'
 end
 
 post_install do |installer|

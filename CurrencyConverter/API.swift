@@ -35,7 +35,7 @@ extension APIServer {
     
     func request(_ api: API, parameters: [String : AnyObject]? = nil) -> Observable<SwiftyJSON.JSON> {
         return sessionManager.rx.responseJSON(method(api), url(api), parameters: parameters)
-            .map { SwiftyJSON.JSON($1 as? [String: AnyObject]) }
+            .map { SwiftyJSON.JSON($1) }
             .do(onNext: { print("\(NSDate()) Reloaded: \($0["rates"].count) items") })
     }
 
